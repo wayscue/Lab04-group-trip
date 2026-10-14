@@ -1,6 +1,4 @@
-﻿
-
-System.Console.Write("What was the total trip in miles? ");
+﻿System.Console.Write("What was the total trip in miles? ");
 int totalTripMiles = Convert.ToInt32 (Console.ReadLine());
 
 
@@ -30,6 +28,7 @@ int pizzaNeeded = Convert.ToInt32 (Console.ReadLine());
 
 System.Console.Write("How much does each pizza cost? ");
 double perPizzaCost = Convert.ToDouble (Console.ReadLine());
+System.Console.WriteLine();
 
 
 
@@ -47,8 +46,8 @@ double costPerPerson = tripTotal / peopleGoing;
 
 
 System.Console.WriteLine("=== Part 1: The Trip ===");
-System.Console.WriteLine($"Fuel Cost: {FuelCost(totalTripMiles, milesPerGallon, gasCost)}");
-System.Console.WriteLine($" Pizza Cost: {pizzaCost.ToString("C")}");
+System.Console.WriteLine($"Fuel Cost: {FuelCost(totalTripMiles, milesPerGallon, gasCost).ToString("C")}");
+System.Console.WriteLine($"Pizza Cost: {pizzaCost.ToString("C")}");
 System.Console.WriteLine($"Trip Total: {tripTotal.ToString("C")}");
 System.Console.WriteLine();
 
@@ -75,10 +74,17 @@ for (int i = 0; i < names.Length; i++)
 }
 
 System.Console.WriteLine("=== Part 3: Who Works How Long ===");
-  System.Console.WriteLine($"Ada: takes home {takeHomePay[1]}, for {hoursWorked[1]}, {hourlyRates[1]}, per hour, must work {hoursNeeded[1]}");
-  System.Console.WriteLine($"Grace: ");
-  System.Console.WriteLine($"Alan:");
-  System.Console.WriteLine($"Katherine:");
+  System.Console.WriteLine($"Ada: takes home {takeHomePay[0].ToString("C")} for {hoursWorked[0]} hours, {takeHomePayPerHour[0].ToString("C")} per hour, must work {hoursNeeded[0].ToString("F2")} hours");
+  System.Console.WriteLine($"Grace: takes home {takeHomePay[1].ToString("C")} for {hoursWorked[1]} hours, {takeHomePayPerHour[1].ToString("C")} per hour, must work {hoursNeeded[1].ToString("F2")} hours");
+  System.Console.WriteLine($"Alan: takes home {takeHomePay[2].ToString("C")} for {hoursWorked[2]} hours, {takeHomePayPerHour[2].ToString("C")} per hour, must work {hoursNeeded[2].ToString("F2")} hours");
+  System.Console.WriteLine($"Katherine: takes home {takeHomePay[3].ToString("C")} for {hoursWorked[3]} hours, {takeHomePayPerHour[3].ToString("C")} per hour, must work {hoursNeeded[3].ToString("F2")} hours");
+  System.Console.WriteLine();
+  System.Console.WriteLine();
+
+System.Console.WriteLine($"Total hours worked: {totalHours}");
+System.Console.WriteLine($"Total take home pay: {totalTakeHome.ToString("C")}");
+System.Console.WriteLine($"Longest anyone must work: {longest.ToString("F2")}");
+
 
 static double FuelCost(double totalTripMiles, double milesPerGallon, double gasCost)
 {
